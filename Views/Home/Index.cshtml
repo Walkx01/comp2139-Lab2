@@ -1,0 +1,28 @@
+﻿@model TipCalculator 
+@{
+    ViewData["Title"] = "Tip Calculator";
+}
+<div asp-validation-summary="All"></div>
+
+<form asp-action = "Index" method = "post">
+    <div>
+        <label>Cost of meal</label>
+        <input asp-for="MealCost"> 
+    </div>
+
+    <div>
+        <label> 15% tip: </label> 
+        <label> @ViewBag.Fifteen.ToString("c2")</label> <br />
+         <label> 20% tip: </label> 
+          <label> @ViewBag.Twenty.ToString("c2")</label> <br />
+          <label> 25% tip: </label> 
+           <label> @ViewBag.TwentyFive.ToString("c2")</label>
+       
+    </div>
+    <div>
+        <button type = "submit"> Calculator </button>
+       <a asp-action="Index">clear</a>
+    </div>
+    
+</form>
+
